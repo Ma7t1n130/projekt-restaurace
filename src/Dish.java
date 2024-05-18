@@ -1,6 +1,6 @@
 import java.math.BigDecimal;
 
-public class Food {
+public class Dish {
 
     private String title;
     private BigDecimal price;
@@ -15,10 +15,10 @@ public class Food {
                 price + Setting.SEPARATOR() +
                 preparationTime + Setting.SEPARATOR() +
                 image + Setting.SEPARATOR() +
-                available;// + Setting.NEWLINE();
+                available;
     }
 
-    public Food(String title, BigDecimal price, int preparationTime, String image, boolean available, String foodCode) throws RestaurantException {
+    public Dish(String title, BigDecimal price, int preparationTime, String image, boolean available, String foodCode) throws RestaurantException {
         this.title = title;
         this.price = price;
         setPreparationTime(preparationTime);
@@ -27,7 +27,7 @@ public class Food {
         this.foodCode=foodCode;
     }
 
-    public Food(String title, BigDecimal price, int preparationTime,String foodCode) throws RestaurantException {
+    public Dish(String title, BigDecimal price, int preparationTime, String foodCode) throws RestaurantException {
         this(title,price,preparationTime,"",true,foodCode);
     }
 
@@ -86,4 +86,17 @@ public class Food {
     public void setFoodCode(String foodCode) {
         this.foodCode = foodCode;
     }
+
+    @Override
+    public String toString() {
+        return "Dish{" +
+                "title='" + title + '\'' +
+                ", price=" + price +
+                ", preparationTime=" + preparationTime +
+                ", image='" + image + '\'' +
+                ", available=" + available +
+                ", foodCode='" + foodCode + '\'' +
+                '}';
+    }
+
 }
